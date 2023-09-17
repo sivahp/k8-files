@@ -1,0 +1,33 @@
+kind: Config
+
+clusters:
+
+- name: "ke-aks-dev-01"
+
+  cluster:
+
+    server: "https://ke-aks-dev-01-7wvklqv8.hcp.eastus.azmk8s.io:443"
+
+    insecure-skip-tls-verify: true
+
+users:
+
+- name: ke-sa
+
+  user:
+
+    token: eyJhbGciOiJSUzI1NiIsImtpZCI6IndROUdYSnpNTEQ1VlZId0o4a05Hb2s0YnI4ektpd25fdWVIa0NNT3VZSHcifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrZS1kZXYtc2VydmljZXMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoia2Utc2EtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoia2Utc2EiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJhZDdjYzkwNy02MmQyLTRlYTQtYmY1Yi0xYjRhYzE2OTg2ZjkiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a2UtZGV2LXNlcnZpY2VzOmtlLXNhIn0.PttBm_e1s_HJxFqycQsECemu_X7iinnlX9y4JL157cat39eQW2E0GXtoxorsgMuDUYY_fmGANKCLQJD-DEr0tNKBiwGgSemjobuetkvzoVEVRzTfhf6zH3LUXI0rajE3CbxHpV_H5kUB_8A-SzLvbra9btoZNIgEoIygkRmL3iZ4FmHWuSq33NrqVr4C_iAgbSXiVjr_7sZuxYsGCplGGrPbczrCH9rnqUzEQ2jflHemW-FEynjy2kBy7nEwUIAg4N5ijXUlK8Dh6362rpelhfv2rCr0SXWsNR3kTpOPYNZIbE0YuQXKtCCDb39p4QyObPuBsx3mHP-4A_VzwA3pNlt45IxnyWg8cyycWWUaTDNah1EjAeJp8B1PdgGetjWzzHXajNhmXsMLMw3xvyZxc6hVfcc-KVrAQj3qbxak30X6o75aH34tojHQWl5y3_smT6HCpjdaJjtioaknjg11Un64_FVrYlqAnjEFm8WfvN0LnCDmboxeHJNZzEVOn2YSxiHGGRQoepyltYXHHFTjDozDQwjLSMOCZ2ssC8_Tyr43eHNFXpSXDLGP963WAjCTtJJcbwIgCAHcV83w7_b1zrjEUKXUFzRzf3b2-z53UQY1MS38GChK62Qi7DTBId6hMx4kTu9NURwfjDeSzxylLkhuH-nD_ihYzY1W-GBXhpQ
+
+contexts:
+
+- name: "ke-aks-dev-01"
+
+  context:
+
+    user: "ke-sa"
+
+    cluster: "ke-aks-dev-01"
+
+ 
+
+current-context: "ke-aks-dev-01"

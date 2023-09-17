@@ -1,0 +1,161 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ke-cluster-role
+
+rules:
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+
+      - patch
+
+    apiGroups:
+
+      - ''
+
+      - apps
+
+      - autoscaling
+
+      - batch
+
+      - extensions
+
+      - policy
+
+      - rbac.authorization.k8s.io
+
+    resources:
+
+      - pods
+
+      - componentstatuses
+
+      - configmaps
+
+      - daemonsets
+
+      - deployments
+
+      - events
+
+      - endpoints
+
+      - horizontalpodautoscalers
+
+      - ingress
+
+      - jobs
+
+      - limitranges
+
+      - namespaces
+
+      - nodes
+
+      - pods
+
+      - persistentvolumes
+
+      - persistentvolumeclaims
+
+      - resourcequotas
+
+      - replicasets
+
+      - replicationcontrollers
+
+      - services
+
+  - verbs:
+
+      - create
+
+      - get
+
+    apiGroups:
+
+      - '""'
+
+    resources:
+
+      - services/portforward
+
+  - verbs:
+
+      - create
+
+      - list
+
+    apiGroups:
+
+      - ''
+
+    resources:
+
+      - pods/portforward
+
+ 
+
+---
+
+apiVersion: v1
+
+kind: ServiceAccount
+
+metadata:
+
+  name: ke-sa
+
+  namespace: ke-dev-services
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+
+kind: ClusterRoleBinding
+
+metadata:
+
+  name: ke-cluster-role-binding
+
+subjects:
+
+  - kind: ServiceAccount
+
+    name: ke-sa 
+
+    namespace: ke-dev-services
+
+roleRef:
+
+  apiGroup: rbac.authorization.k8s.io
+
+  kind: ClusterRole
+
+  name: ke-cluster-role  #cluster-admin
+
+---
+
+apiVersion: v1
+
+kind: Secret
+
+metadata:
+
+  name: ke-sa-token
+
+  namespace: ke-dev-services
+  annotations:
+
+    kubernetes.io/service-account.name: ke-sa
+
+type: kubernetes.io/service-account-token
+
+# Once this file has been completed, we will get one secrets created on the cluster
+#Copy the secret and get it deployed into kube-config file
+# This you can update in Lens and locally and any where 
