@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app1-busybox
+    lables:
+      app:
+      type:
+      service:
+spec:
+  - image: busybox:latest
+    name : busybox
