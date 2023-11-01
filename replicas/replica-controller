@@ -1,0 +1,17 @@
+it helps to run multiple containers for high availablity
+It's manily used for load balancing as well and auto scaling
+RC will expands the work loads in the multiple nodes
+
+
+Replication controller         Replicaset
+
+RC is a old technology, now it's the new term is replicaset
+
+kubectl get replicaset
+kubectl get replicacontroller
+
+
+labels and selectors
+
+replicaset monitors the POD's and create if it failed
+it will identity based on the labels

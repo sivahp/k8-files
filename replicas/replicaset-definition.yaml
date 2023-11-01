@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: my-rset
+  lables:
+    app: siva
+spec:
+  templates:
+    metadata:
+      name: nginx
+      labels:
+        app: fist
+        env: dev
+        tier: frontend
+    spec:
+      containers:
+        - name: app
+          image: nginx:latest
+        - name: backend
+          image: backend:latest
+  replicas: 3
+  selector: 
+    match-labels:
+        app: fist
+

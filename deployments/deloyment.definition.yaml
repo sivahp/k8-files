@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  name: my-app
+  labels:
+    service:
+    type:
+spec:
+  templates:
+    containers:
+      - image:
+        name:
+  replicasets: 3
+  selectors:
+    matachlabels:
+      service: 
+      
