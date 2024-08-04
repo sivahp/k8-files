@@ -1,0 +1,15 @@
+Deployment is almost similar to the replicaset
+
+It's the top most layer
+
+
+POD ---- Replicaset--- Deployments
+
+let's say you have web server, you want to do some actions
+
+upgrade
+rollback
+HA
+rolling updates
+you can resume
+you can stop

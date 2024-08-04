@@ -3,15 +3,20 @@ kind: Deployment
 metadata:  
   name: my-app
   labels:
-    service:
+    service: v1
     type:
 spec:
   templates:
+    metadata:  
+      name: my-app
+      labels:
+        service: v1
+        type:
     containers:
-      - image:
-        name:
+      - image: my-app:latest
+        name: my-app
   replicasets: 3
   selectors:
     matachlabels:
-      service: 
+      service: v1
       

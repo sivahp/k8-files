@@ -1,0 +1,8 @@
+k8 services is used to enable the comunication within the cluster
+as well as outside communication
+
+it also used to connect one App to another App
+
+front end and backend app communication
+
+connectivity between each POD's
