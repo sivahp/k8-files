@@ -1,0 +1,21 @@
+we willl attach a volume to the POD to store the data
+
+volume:
+    - name: data-volume
+
+persistant volumes:
+
+K8 will create large volume, anohther users will use that
+
+apiVersion: v1
+kind: PersistantVolume
+metadata:
+    name: pv-vol
+spec:
+    accessModes:
+        - Readwriteonce
+    capacity::
+        storage: 1Gi
+    awselasticblockestore:
+        VolumeID: data-volume
+        fsType: ext4

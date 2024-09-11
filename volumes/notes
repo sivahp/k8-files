@@ -1,0 +1,6 @@
+Cluster Admin team wil create Persistant volumes and users will create PVC
+once PVC is created 
+every PVC will bind with volumes
+you can stil use label and selectors 
+
+PV --- PVC
