@@ -1,0 +1,27 @@
+Ingress controller routes the external traffic to k8 endpoints by using ingress and apart from that 
+it also does that traffic routing, load balancing, SSL termination, Path based routing, Host based routing, 
+
+It also has some features like
+
+authentication
+rate limiting
+monitoring
+
+
+GPT Notes:
+
+A Kubernetes Ingress controller manages external access to services in a Kubernetes cluster, typically HTTP and HTTPS traffic. It acts as a gateway that directs incoming requests to the appropriate services based on the rules defined in Kubernetes Ingress resources.
+
+Here's a breakdown of its role:
+
+1. **Traffic Routing**: Ingress controllers route traffic to services based on paths or hostnames specified in Ingress resources. For example, it could direct traffic from `example.com/api` to one service and traffic from `example.com/app` to another.
+
+2. **Load Balancing**: It performs load balancing, distributing traffic across multiple instances of a service, helping to scale applications and improve reliability.
+
+3. **TLS Termination**: Ingress controllers can handle SSL/TLS termination, offloading this work from the backend services. This allows you to secure connections between users and the cluster.
+
+4. **Path-Based Routing and Host-Based Routing**: Ingress resources allow defining rules that direct requests based on the request’s path (e.g., `/api`) or hostname (e.g., `api.example.com`), helping to expose multiple services on the same IP.
+
+5. **Additional Features**: Many Ingress controllers also support advanced features such as authentication, rate limiting, and monitoring.
+
+Some common Ingress controllers include NGINX, Traefik, HAProxy, and AWS ALB Ingress (for AWS environments). Each has different capabilities and configurations tailored for specific needs, but they all serve to manage and simplify external access to services within a Kubernetes cluster.

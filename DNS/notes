@@ -1,0 +1,39 @@
+Main Objective of k8 DNS
+
+1. what names are assigned to what objects
+2. Service DNS records
+3. POD DNS records
+
+each node has a node name and it's IP address
+Built in DNS server
+POD, services which in the cluster
+when ever we create a service, it will create a virtual IP and as well DNS entry
+
+Service DNS records
+POD's DNS records
+
+test pod ip
+web pod -ip
+web-service -ip
+
+all the POD's and services can rech ohter
+
+when ever we create a service in k8, it will create a DNS record entry
+
+hostname ip
+web-service 10.107.37.188
+
+curl http://web-service
+# welcome to siva
+
+let's both are in different namepsace
+
+curl http://web-service.apps.svc.cluster.local
+                            type    root
+
+Cluster, will have DNS entry each time when it creates new pod
+
+core DNS , will be availabe in the kube-systme namespace
+./coredns
+
+cat /etc/coredns/corefile
