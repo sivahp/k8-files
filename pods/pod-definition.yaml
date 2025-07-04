@@ -31,4 +31,32 @@ spec:
       image: backend:latest
 
       
+---
+
+#resources and liveness and readiness probe
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: 80
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+  # Used to check if the application is ready to serve traffic.
+  # HTTP GET request on / every 10 seconds, starting 5 seconds after the container starts.
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: 80
+  initialDelaySeconds: 15
+  periodSeconds: 20
+
+# Used to check if the application is still running.
+# If it fails, Kubernetes will restart the container.
+# Starts checking 15 seconds after the container starts, every 20 seconds.
+
+
+
+
 
